@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class AIController : MonoBehaviour
 {
     public LayerMask groundLayer;
@@ -13,15 +13,43 @@ public class AIController : MonoBehaviour
     private Rigidbody2D rb;
     private float timePlayerAbove = 0.0f;
     private bool playerAbove = false;
-
+    public int maxHealth = 100; // Maximum health of the AI character
+    public int currentHealth;  // Current health of the AI character
+    
+    public Slider healthSlider;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
+        UpdateHealthBar();
+        
+    }
+    public void TakeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        UpdateHealthBar();
+
+        if (currentHealth <= 0)
+        {
+           Destroy(gameObject);
+        }
     }
 
+    // Update the health bar UI
+    private void UpdateHealthBar()
+    {
+        if (healthSlider != null)
+        {
+            healthSlider.value = (float)currentHealth / maxHealth;
+        }
+    }
     private void Update()
     {
+        
         isGrounded = Physics2D.OverlapCircle(transform.position, 1f, groundLayer);
+        
 
         if (player != null)
         {
@@ -34,6 +62,16 @@ public class AIController : MonoBehaviour
                 Vector2 movement = new Vector2(horizontal, 0);
 
                 rb.velocity = new Vector2(movement.x * moveSpeed, rb.velocity.y);
+                if (horizontal > 0)
+                {
+                    // Player is moving to the right
+                    transform.rotation = Quaternion.Euler(0, 180, 0); // No rotation
+                }
+                else if (horizontal < 0)
+                {
+                    // Player is moving to the left
+                    transform.rotation = Quaternion.Euler(0, 0, 0); // Flip on the Y-axis
+                }
             }
             else
             {
@@ -66,6 +104,7 @@ public class AIController : MonoBehaviour
                 playerAbove = false;
                 timePlayerAbove = 0.0f;
             }
+            
         }
     }
 
