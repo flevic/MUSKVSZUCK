@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerScript : MonoBehaviour
     private void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
+        
     }
 
     private void Update()
@@ -31,6 +33,8 @@ public class PlayerScript : MonoBehaviour
             // Apply an upward force for jumping
             rigidbody2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+
+      
     }
 
 }
