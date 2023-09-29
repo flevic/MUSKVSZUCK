@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Animations; 
 public class AIController : MonoBehaviour
 {
     public LayerMask groundLayer;
@@ -17,12 +18,15 @@ public class AIController : MonoBehaviour
     public int currentHealth;  // Current health of the AI character
     
     public Slider healthSlider;
+
+    private Animator anim;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         UpdateHealthBar();
-        
+        anim = GetComponent<Animator>();
+
     }
     public void TakeDamage(int damageAmount)
     {
@@ -54,7 +58,7 @@ public class AIController : MonoBehaviour
         if (player != null)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
+            anim.Play("New animation"); 
             // Check if the AI is within stopping distance
             if (distanceToPlayer > stoppingDistance)
             {
