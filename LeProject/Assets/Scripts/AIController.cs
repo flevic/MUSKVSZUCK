@@ -53,9 +53,9 @@ public class AIController : MonoBehaviour
     {
         
         isGrounded = Physics2D.OverlapCircle(transform.position, 1f, groundLayer);
-        
 
-        if (player != null)
+      
+            if (player != null)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
             anim.Play("New animation"); 
@@ -91,11 +91,13 @@ public class AIController : MonoBehaviour
                 {
                     
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                    anim.Play("JumpM", 1,1); 
                 }
             }
             else
             {
                 timePlayerAbove = 0.0f;
+                 
             }
 
             // Check if the player is above the AI
