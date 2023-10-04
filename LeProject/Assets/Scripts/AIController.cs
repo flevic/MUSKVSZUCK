@@ -52,7 +52,7 @@ public class AIController : MonoBehaviour
     private void Update()
     {
         
-        isGrounded = Physics2D.OverlapCircle(transform.position, 1f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(transform.position, 5f, groundLayer);
 
       
             if (player != null)

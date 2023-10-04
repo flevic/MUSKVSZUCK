@@ -5046,6 +5046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 281874512}
   - component: {fileID: 281874513}
+  - component: {fileID: 281874514}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -5120,6 +5121,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &281874514
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281874511}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 6be50f06652e7f449bb2fc5d6c934445, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &293276377
 GameObject:
   m_ObjectHideFlags: 0
@@ -5636,7 +5664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 10
+  jumpForce: 5
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5652,7 +5680,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 680025664}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6be50f06652e7f449bb2fc5d6c934445, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5704,7 +5732,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6be50f06652e7f449bb2fc5d6c934445, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -12077,7 +12105,7 @@ MonoBehaviour:
   player: {fileID: 680025666}
   moveSpeed: 5
   stoppingDistance: 1.5
-  jumpForce: 0.5
+  jumpForce: 0.25
   maxHealth: 100
   currentHealth: 0
   healthSlider: {fileID: 383689393}
@@ -12142,7 +12170,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6be50f06652e7f449bb2fc5d6c934445, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

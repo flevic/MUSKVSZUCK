@@ -38,7 +38,7 @@ public class PlayerScript : MonoBehaviour
         rigidbody2d.velocity = new Vector2(movement.x * moveSpeed, rigidbody2d.velocity.y);
 
         // Check if the player is grounded using OverlapCircle
-        isGrounded = Physics2D.OverlapCircle(transform.position, 1f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(transform.position, 5f, groundLayer);
 
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
