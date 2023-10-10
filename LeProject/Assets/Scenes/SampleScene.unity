@@ -5130,7 +5130,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281874511}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -5664,7 +5664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 5
+  jumpForce: 8
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12007,6 +12007,7 @@ GameObject:
   - component: {fileID: 1489013742}
   - component: {fileID: 1489013741}
   - component: {fileID: 1489013744}
+  - component: {fileID: 1489013745}
   m_Layer: 0
   m_Name: AI
   m_TagString: AICharacter
@@ -12094,7 +12095,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489013738}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1df3e127447eed41b84792e164fdfbf, type: 3}
   m_Name: 
@@ -12202,6 +12203,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1489013745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489013738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffecc4423bc7677498a752445966c415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpForce: 8
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  punchDelay: 1
+  punchDamage: 10
+  inarea: 1
 --- !u!1 &1775382525
 GameObject:
   m_ObjectHideFlags: 0
@@ -12214,7 +12235,7 @@ GameObject:
   - component: {fileID: 1775382526}
   - component: {fileID: 1775382528}
   - component: {fileID: 1775382529}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Highground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
