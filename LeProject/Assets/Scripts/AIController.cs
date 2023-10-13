@@ -25,8 +25,10 @@ public class AIController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         UpdateHealthBar();
-        anim = GetComponent<Animator>();
-
+        anim = this.GetComponent<Animator>();
+     
+        
+ 
     }
     public void TakeDamage(int damageAmount)
     {
@@ -51,31 +53,38 @@ public class AIController : MonoBehaviour
     }
     private void Update()
     {
-        
+       
         isGrounded = Physics2D.OverlapCircle(transform.position, 5f, groundLayer);
 
       
             if (player != null)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-            anim.Play("New animation"); 
+             
             // Check if the AI is within stopping distance
             if (distanceToPlayer > stoppingDistance)
             {
+                
+
                 float horizontal = Mathf.Sign(player.position.x - transform.position.x);
                 Vector2 movement = new Vector2(horizontal, 0);
 
                 rb.velocity = new Vector2(movement.x * moveSpeed, rb.velocity.y);
                 if (horizontal > 0)
                 {
+                   
                     // Player is moving to the right
                     transform.rotation = Quaternion.Euler(0, 180, 0); // No rotation
+                   
                 }
                 else if (horizontal < 0)
                 {
+                    
                     // Player is moving to the left
                     transform.rotation = Quaternion.Euler(0, 0, 0); // Flip on the Y-axis
+                   
                 }
+               
             }
             else
             {
@@ -91,7 +100,7 @@ public class AIController : MonoBehaviour
                 {
                     
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                    anim.Play("JumpM", 1,1); 
+                    anim.Play("JumpM"); 
                 }
             }
             else
