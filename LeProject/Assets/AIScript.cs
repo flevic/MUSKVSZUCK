@@ -40,7 +40,7 @@ public class AIScript : MonoBehaviour
         Vector2 movement = new Vector2(horizontal, 0);
 
         rigidbody2d.velocity = new Vector2(movement.x * moveSpeed, rigidbody2d.velocity.y);
-
+        anim.SetBool("Ismoving", true); 
         // Check if the player is grounded using OverlapCircle
         isGrounded = Physics2D.OverlapCircle(transform.position, 2.5f, groundLayer);
 
