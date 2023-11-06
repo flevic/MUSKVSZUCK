@@ -12337,7 +12337,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b08ef23330cc7df4ba0002dcb95b5482, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -12358,6 +12358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffecc4423bc7677498a752445966c415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1489013744}
   moveSpeed: 5
   jumpForce: 8
   groundLayer:

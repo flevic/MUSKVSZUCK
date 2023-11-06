@@ -100,7 +100,7 @@ public class AIController : MonoBehaviour
                 {
                     
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                    anim.Play("JumpM"); 
+                     
                 }
             }
             else

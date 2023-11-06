@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class AIScript : MonoBehaviour
 {
-    private Animator anim;
+    public  Animator anim;
     public float moveSpeed = 5.0f;
     public float jumpForce = 10.0f;
     public LayerMask groundLayer; // Define the ground layer
@@ -27,29 +27,44 @@ public class AIScript : MonoBehaviour
             bool inarea = targetScript.Trigger;
             // Use the value as needed.
         }
-         anim = this.GetComponent<Animator>();
+      
    
 
     }
 
     private void Update()
     {
-   
+
+      
         float horizontal = Input.GetAxis("Horizontal2");
 
         Vector2 movement = new Vector2(horizontal, 0);
 
         rigidbody2d.velocity = new Vector2(movement.x * moveSpeed, rigidbody2d.velocity.y);
-        anim.SetBool("Ismoving", true); 
         // Check if the player is grounded using OverlapCircle
         isGrounded = Physics2D.OverlapCircle(transform.position, 2.5f, groundLayer);
 
         if (isGrounded && Input.GetButtonDown("Jump2"))
         {
             // Apply an upward force for jumping
+             
             rigidbody2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-         
+            
+
         }
+     
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        {
+            anim.SetBool("Ismoving", true);
+        }
+        else
+        {
+            anim.SetBool("Ismoving", false); 
+        }
+     
+
+
+
 
         if (Input.GetButtonDown("Fire1") && Time.time >= nextPunchTime && inarea == true)
         {
@@ -69,7 +84,7 @@ public class AIScript : MonoBehaviour
 
             // Apply damage to the AI character.
 
-
+            
         }
 
 
@@ -85,6 +100,7 @@ public class AIScript : MonoBehaviour
             // Player is moving to the left
             transform.rotation = Quaternion.Euler(0, 0, 0); // Flip on the Y-axis
         }
+      
     }
 
 }
