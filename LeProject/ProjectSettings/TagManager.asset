@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - AICharacter
+  - PlayerCharacter
   layers:
   - Default
   - TransparentFX

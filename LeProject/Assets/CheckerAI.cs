@@ -15,4 +15,12 @@ public class CheckerAI : MonoBehaviour
             Trigger = true;
         }
     }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        // Check if the colliding GameObject has a "AICharacter" tag.
+        if (other.CompareTag("PlayerCharacter"))
+        {
+            Trigger = false;
+        }
+    }
 }
