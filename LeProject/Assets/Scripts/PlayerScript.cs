@@ -55,7 +55,7 @@ public class PlayerScript : MonoBehaviour
 
             // Trigger the punch animation or attack here if you have one.
             GameObject aiCharacter = GameObject.Find("AI");
-            AIHealth aiHealth = GetComponent<AIHealth>();
+            AIHealth aiHealth = aiCharacter.GetComponent<AIHealth>();
                         if (aiHealth != null)
                         {
                 Debug.Log("KYS");
