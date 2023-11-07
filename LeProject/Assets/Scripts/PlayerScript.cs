@@ -15,22 +15,29 @@ public class PlayerScript : MonoBehaviour
     public int punchDamage = 10;    // Damage per punch
     private Transform triggerZone;
     private float nextPunchTime = 0f;
-    public bool inarea = true;
+    public bool inarea = false;
+
     private void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        triggerZone = GameObject.Find("TriggerZone").transform;
-        TriggerChecker targetScript = GetComponent<TriggerChecker>();
-        if (targetScript != null)
-        {
-            bool inarea = targetScript.Trigger;
-            // Use the value as needed.
-        }
+        
     }
 
     private void Update()
     {
-        
+        GameObject triggerZone = GameObject.Find("TriggerZonePlayer");
+        CheckerPlayer targetScript = triggerZone.GetComponent<CheckerPlayer>();
+        if (targetScript != null)
+        {
+            
+             inarea = targetScript.Trigger;
+            // Use the value as needed.
+        }
+
+        if (inarea == true)
+        {
+            Debug.Log("ITTRUE");
+        }
         float horizontal = Input.GetAxis("Horizontal");
 
         Vector2 movement = new Vector2(horizontal, 0);

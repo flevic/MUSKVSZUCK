@@ -16,17 +16,11 @@ public class AIScript : MonoBehaviour
     public int punchDamage = 10;    // Damage per punch
     private Transform triggerZone;
     private float nextPunchTime = 0f;
-    public bool inarea = true;
+    public bool inarea = false;
     private void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        triggerZone = GameObject.Find("TriggerZone").transform;
-        TriggerChecker targetScript = GetComponent<TriggerChecker>();
-        if (targetScript != null)
-        {
-            bool inarea = targetScript.Trigger;
-            // Use the value as needed.
-        }
+        
       
    
 
@@ -34,8 +28,15 @@ public class AIScript : MonoBehaviour
 
     private void Update()
     {
+        GameObject triggerZone = GameObject.Find("TriggerZoneAI");
+        CheckerAI targetScript = triggerZone.GetComponent<CheckerAI>();
+        if (targetScript != null)
+        {
 
-      
+            inarea = targetScript.Trigger;
+            // Use the value as needed.
+        }
+
         float horizontal = Input.GetAxis("Horizontal2");
 
         Vector2 movement = new Vector2(horizontal, 0);
