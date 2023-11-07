@@ -26,13 +26,13 @@ public class Menucontroller : MonoBehaviour
     public void Controls()
     {
         // Load the "GameScene" when the Start button is pressed.
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("ControlsScene");
     }
 
     public void Credits()
     {
         // Load the "GameScene" when the Start button is pressed.
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("CreditsScene");
     }
     public void ExitGame()
     {
