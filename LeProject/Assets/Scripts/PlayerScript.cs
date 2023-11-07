@@ -49,14 +49,17 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Time.time >= nextPunchTime && inarea == true)
         {
             // Check if the AI character is within the trigger zone.
-            Debug.Log("KYS");
-                
-                    // Trigger the punch animation or attack here if you have one.
-                    
-                        AIController aiHealth = GetComponent<AIController>();
+
+
+            Debug.Log("UhOH");
+
+            // Trigger the punch animation or attack here if you have one.
+            GameObject aiCharacter = GameObject.Find("AI");
+            AIHealth aiHealth = GetComponent<AIHealth>();
                         if (aiHealth != null)
                         {
-                            aiHealth.TakeDamage(punchDamage);
+                Debug.Log("KYS");
+                aiHealth.TakeDamage(punchDamage);
                         }
 
                         // Set the time for the next punch.
