@@ -5228,10 +5228,10 @@ RectTransform:
   - {fileID: 1874375474}
   m_Father: {fileID: 1189332293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 230, y: 187.5}
-  m_SizeDelta: {x: -720, y: -467.5558}
+  m_AnchoredPosition: {x: -210, y: -60}
+  m_SizeDelta: {x: 160, y: 27.444199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &383689393
 MonoBehaviour:
@@ -5560,10 +5560,10 @@ RectTransform:
   - {fileID: 1587992247}
   m_Father: {fileID: 1189332293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -230, y: 187.5}
-  m_SizeDelta: {x: -720, y: -467.5558}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 210, y: -60}
+  m_SizeDelta: {x: 160, y: 27.444199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656702306
 MonoBehaviour:
@@ -5726,7 +5726,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  punchDelay: 0.5
+  punchDelay: 1
   punchDamage: 10
   inarea: 0
 --- !u!61 &680025668
@@ -12723,7 +12723,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  punchDelay: 0.5
+  punchDelay: 1
   punchDamage: 10
   inarea: 0
 --- !u!114 &1489013746
