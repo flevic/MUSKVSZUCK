@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZuckWon.unity
     guid: 821b07d56420ed04e84b5455f97c6069
+  - enabled: 1
+    path: Assets/Scenes/MuskWon.unity
+    guid: 23cbcacecfeb88242b144024e673d9fb
   m_configObjects: {}
